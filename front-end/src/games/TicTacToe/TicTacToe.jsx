@@ -76,6 +76,7 @@ function Board() {
     <div className="tictactoe-container"> 
       <div className="game">
         <div className="game-info">
+          <h1>Tic Tac Toe</h1>
           <div className="status"> {status} </div>
           <Popup winnerProp={winner} ></Popup>
         </div>
