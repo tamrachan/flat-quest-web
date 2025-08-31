@@ -59,11 +59,15 @@
   transition: background-color 0.2s, color 0.2s;
 }
 
-/* .settings-button, .logout-button {
+.settings-button {
+  background-color: transparent;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   max-height: fit-content;
-} */
+  transition: background-color 0.2s, color 0.2s;
+}
 
 .logout-button:hover {
   background-color: var(--primary-colour-500);
