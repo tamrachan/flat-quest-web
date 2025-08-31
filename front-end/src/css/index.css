@@ -1,8 +1,13 @@
 /* --- UNIVERSAL RESET & BACKGROUND FIX --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html, body, #root, .App {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  width: 100%;
+}
+
+html, body {
+    height: 100%;
 }
 
 /*
