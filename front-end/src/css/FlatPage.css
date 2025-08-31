@@ -1,5 +1,9 @@
 @import './colours.css';
 
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
 .flatpage-container {
   padding: 1.5rem;
   background-color: var(--background-colour); 
