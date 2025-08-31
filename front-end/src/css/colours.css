@@ -1,0 +1,13 @@
+:root {
+    --pastel-blue-50: #f3f9fc;
+    --pastel-blue-100: #e7f2f7;
+    --pastel-blue-200: #c9e4ee;
+    --pastel-blue-300: #add8e6; /* Original colour */
+    --pastel-blue-400: #62b5ce;
+    --pastel-blue-500: #3e9cb9;
+    --pastel-blue-600: #2e7e9b;
+    --pastel-blue-700: #26667e;
+    --pastel-blue-800: #235669;
+    --pastel-blue-900: #224858;
+    --pastel-blue-950: #162f3b;
+}
