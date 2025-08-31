@@ -1,5 +1,12 @@
+/* --- UNIVERSAL RESET & BACKGROUND FIX --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /*
-  Import your color palette first so all other rules can use the variables.
+  Import your color palette *after* the reset.
 */
 @import './colours.css';
 
@@ -60,12 +67,6 @@ body.dark {
 }
 
 
-/* --- UNIVERSAL RESET & BACKGROUND FIX --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* This is the key fix. It targets every layer of the page wrapper. */
 html, body, #root {
