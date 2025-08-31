@@ -1,5 +1,7 @@
+@import './colours.css';
+
 .navbar {
-  background-color: navy;
+  background-color: var(--pastel-blue-800);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -25,7 +27,7 @@
 }
 
 p {
-  color: whitesmoke;
+  color: #f5f5f5;
 }
 
 .nav-link:hover {
