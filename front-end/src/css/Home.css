@@ -1,7 +1,200 @@
-.home {
+/* Import your main color palette */
+@import './colours.css';
+
+/* --- Professional Color Palette and Fonts --- */
+:root {
+  /* Define the theme using your variables */
+  --primary-color: var(--pastel-blue-400); /* A friendly, accessible blue */
+  --primary-color-dark: var(--pastel-blue-700);
+  --primary-gradient: linear-gradient(135deg, var(--pastel-blue-300), var(--pastel-green-400));
+  
+  --secondary-color: var(--pastel-green-500); /* A vibrant accent green */
+  
+  --dark-text: var(--whitesmoke-800);
+  --light-text: var(--whitesmoke-50);
+  --background-color: #FFFFFF;
+  --section-background: var(--whitesmoke-50);
+
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  --card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.home-page {
+  font-family: 'Poppins', sans-serif; /* A clean, modern font */
+  color: var(--dark-text);
+  background-color: var(--background-color);
+}
+
+/* --- General Section Styling --- */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--dark-text);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  background: var(--primary-gradient);
+  color: var(--dark-text); /* Using darker text for better contrast on pastel background */
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--pastel-blue-950);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--light-text);
+  background-color: var(--primary-color-dark);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-shadow);
+  background-color: var(--pastel-blue-800);
+}
+
+/* --- Features Section --- */
+.features-section {
+  padding: 5rem 2rem;
+  background-color: var(--section-background);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: var(--background-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 4px solid var(--pastel-blue-200);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-hover-shadow);
+  border-top-color: var(--primary-color);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--whitesmoke-600);
+}
+
+/* --- "Why FlatQuest?" Section --- */
+.why-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  background-color: var(--pastel-blue-100);
+}
+
+.why-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.why-section .section-title {
+  color: var(--pastel-blue-900);
+}
+
+.why-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: var(--pastel-blue-800);
+}
+
+.tagline h4 {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--pastel-blue-600);
+  margin-bottom: 2.5rem;
+}
+
+.cta-button-secondary {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color-dark);
+  background-color: transparent;
+  border: 2px solid var(--primary-color-dark);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cta-button-secondary:hover {
+  background-color: var(--primary-color-dark);
+  color: var(--light-text);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+
+/* .home {
     background-color: whitesmoke;
 }
 
 .home-p {
     color: black;
-}
+} */
