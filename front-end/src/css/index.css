@@ -12,7 +12,7 @@
   font-weight: 400;
 
   /* Set the default light theme using your color variables */
-  color: var(--pastel-blue-900);
+  color: var(--primary-colour-900);
   background-color: var(--whitesmoke-50);
 
   /* Standard web optimization properties */
@@ -49,12 +49,12 @@ body {
 
 a {
   font-weight: 500;
-  color: var(--pastel-blue-700);
+  color: var(--primary-colour-700);
   text-decoration: none; /* Removed underline by default for a cleaner look */
   transition: color 0.2s ease;
 }
 a:hover {
-  color: var(--pastel-blue-500);
+  color: var(--primary-colour-500);
   text-decoration: underline; /* Add underline on hover for clarity */
 }
 
@@ -62,7 +62,7 @@ h1 {
   font-size: 2.8em; /* Slightly adjusted for better scaling */
   line-height: 1.2;
   font-weight: 700;
-  color: var(--pastel-blue-950);
+  color: var(--primary-colour-950);
 }
 
 /* Base button styles - can be overridden by more specific component styles */
@@ -73,18 +73,18 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--pastel-blue-500);
+  background-color: var(--primary-colour-500);
   color: var(--whitesmoke-50);
   cursor: pointer;
   transition: background-color 0.25s, transform 0.2s;
 }
 button:hover {
-  background-color: var(--pastel-blue-600);
+  background-color: var(--primary-colour-600);
   transform: translateY(-2px);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto var(--pastel-blue-400);
+  outline: 4px auto var(--primary-colour-400);
   outline-offset: 2px;
 }
 
@@ -94,15 +94,15 @@ button:focus-visible {
 */
 @media (prefers-color-scheme: dark) {
   :root {
-    color: var(--pastel-blue-100);
-    background-color: var(--pastel-blue-950);
+    color: var(--primary-colour-100);
+    background-color: var(--primary-colour-950);
   }
 
   a {
-    color: var(--pastel-blue-300);
+    color: var(--primary-colour-300);
   }
   a:hover {
-    color: var(--pastel-blue-200);
+    color: var(--primary-colour-200);
   }
 
   h1 {
@@ -110,10 +110,10 @@ button:focus-visible {
   }
 
   button {
-    background-color: var(--pastel-blue-700);
+    background-color: var(--primary-colour-700);
     color: var(--whitesmoke-50);
   }
   button:hover {
-    background-color: var(--pastel-blue-600);
+    background-color: var(--primary-colour-600);
   }
 }

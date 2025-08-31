@@ -1,9 +1,11 @@
+@import './colours.css';
+
 .title {
     padding-bottom: 2rem;
     text-align: center;
 }
 
-p {
+h1, p {
     color: black;
 }
 
@@ -21,24 +23,13 @@ p {
 }
 
 .taskBox {
-    padding: 1rem;
-    background-color: #ADD8E6;
-    border: 1px solid gray;
-    border-radius: 10px;
-    max-height: 100%;
     overflow-y: auto;
     /* overflow-y: scroll; */
-
     grid-column: 1 / 4;
     grid-row: 1 / 4;
 }
 
 .taskLog {
-    padding: 1rem;
-    background-color: #ADD8E6;
-    border: 1px solid gray;
-    border-radius: 10px;
-    max-height: 100%;
     overflow-y: auto;
 
     /* grid-column-start: 3;
@@ -50,11 +41,6 @@ p {
 }
 
 .personalTasks {
-  padding: 1rem;
-  background-color: #ADD8E6;
-  border: 1px solid gray;
-  border-radius: 10px;
-  max-height: 100%; /* Limit total height */
   display: flex;
   flex-direction: column;
   grid-column: 4 / 7;
@@ -62,8 +48,16 @@ p {
   overflow: hidden; /* Prevent extra scrollbars */
 }
 
+.taskBox, .taskLog, .personalTasks, .flatmates, .graph, .stats {
+  padding: 1rem;
+  background-color: var(--primary-colour-light);
+  border: 1px solid gray;
+  border-radius: 10px;
+  max-height: 100%;
+}
+
 .sticky {
-  background-color: #ADD8E6; /* Match background */
+  background-color: var(--primary-colour-light); /* Match background */
   padding: 0.5rem;
   font-weight: bold;
   position: sticky;
@@ -168,25 +162,12 @@ button {
 .stats {
     grid-column: 7 / 9;
     grid-row: 1 / 2;
-
-    padding: 1rem;
-    background-color: #ADD8E6;
-    border: 1px solid gray;
-    border-radius: 10px;
-    max-height: 100%;
 }
 
 .graph {
     grid-column: 7 / 9;
     grid-row: 2 / 5;
-
-    padding: 1rem;
-    background-color: #ADD8E6;
-    border: 1px solid gray;
-    border-radius: 10px;
-    max-height: 100%;
 }
-
 
 
 .flatmate-section {
@@ -199,10 +180,6 @@ button {
     width: 100%;
     max-height: 60%;
     align-items: center;
-    background-color: #ADD8E6;
-    padding: 1rem;
-    border: 1px solid gray;
-    border-radius: 10px;
 
     /* flex container for the separate character icons */
     display: flex;

@@ -1,0 +1,123 @@
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 998;
+}
+.sidebar-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.theme-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background-color: var(--whitesmoke-50);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+.theme-sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--primary-colour-200);
+}
+.sidebar-header h3 {
+  color: var(--primary-colour-900);
+  font-weight: 600;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--primary-colour-600);
+  cursor: pointer;
+}
+.close-btn:hover {
+  background-color: var(--primary-colour-200);
+}
+
+.sidebar-content {
+  padding: 1.5rem;
+}
+.sidebar-content p {
+  color: var(--primary-colour-800);
+  margin-bottom: 1rem;
+}
+
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.theme-swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.theme-swatch:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Define the background for each swatch */
+.theme-swatch.blue { background-color: var(--pastel-blue-500); }
+.theme-swatch.pink { background-color: var(--pastel-pink-500); }
+.theme-swatch.green { background-color: var(--pastel-green-500); }
+.theme-swatch.purple { background-color: var(--pastel-purple-500); }
+.theme-swatch.red { background-color: var(--pastel-red-500); }
+.theme-swatch.neutral { background-color: var(--whitesmoke-500); }
+.theme-swatch.teal { background-color: var(--color-jet-stream-500); }
+.theme-swatch.brown { background-color: var(--color-almond-500); }
+
+.sidebar-action-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark-text);
+  background-color: var(--whitesmoke-100);
+  border: 1px solid var(--primary-colour-200);
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.sidebar-action-button:hover {
+  background-color: var(--primary-colour-200);
+  border-color: var(--primary-colour-300);
+}
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid var(--primary-colour-200);
+  margin: 1.5rem 0;
+}

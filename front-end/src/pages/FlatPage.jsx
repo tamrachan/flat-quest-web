@@ -191,7 +191,7 @@ function FlatPage() {
 
                 <h3>Progress</h3>
                 <div>A visual of how many left to do / total for the week</div>
-                <ProgressBar progress={50} label="Completed tasks / Total tasks" color="#2196f3" /> {/* Pass in percentage of tasks calculated */}
+                <ProgressBar progress={50} label="Completed tasks / Total tasks" color="var(--primary-colour)"  /> {/* Pass in percentage of tasks calculated */}
 
             </div>
 

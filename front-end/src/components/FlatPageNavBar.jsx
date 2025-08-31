@@ -1,7 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import "../css/NavBar.css"
+import "../css/NavBar.css";
+import { FaCog } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
-function FlatPageNavBar() {
+function FlatPageNavBar({ onSettingsClick }) {
     const navigate = useNavigate();
     const logout = () => {
         localStorage.clear();
@@ -16,6 +18,9 @@ function FlatPageNavBar() {
             <Link to="/flatpage" className="nav-link">FlatPage</Link>
             <Link to="/games" className="nav-link">Mini games</Link>
             <Link to="/details" className="nav-link">Edit account</Link>
+            <button onClick={onSettingsClick} className="settings-button">
+                <FaCog />
+            </button>
             <button className="nav-link logout-button" onClick={logout}>Logout</button>
             
         </div>

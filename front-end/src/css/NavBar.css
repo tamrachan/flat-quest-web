@@ -2,7 +2,7 @@
 
 .navbar {
   /* Use a dark, saturated blue for the background for good contrast */
-  background-color: var(--pastel-blue-800); 
+  background-color: var(--primary-colour-dark); 
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,7 @@
   border-radius: 6px; /* Slightly more rounded corners */
   transition: background-color 0.2s, color 0.2s;
   /* Use a light, readable text color */
-  color: var(--pastel-blue-100); 
+  color: var(--primary-colour-100); 
 }
 
 /* Ensure the welcome message paragraph has no hover effect */
@@ -40,15 +40,15 @@
 
 .nav-link:hover {
   /* Use a slightly lighter blue for the hover background */
-  background-color: var(--pastel-blue-700); 
+  background-color: var(--primary-colour-700); 
   /* Make the text brighter on hover */
   color: var(--whitesmoke-50);
 }
 
 .logout-button {
   background-color: transparent;
-  color: var(--pastel-blue-100);
-  border: 1px solid var(--pastel-blue-500); /* Add a subtle border */
+  color: var(--primary-colour-100);
+  border: 1px solid var(--primary-colour-500); /* Add a subtle border */
   font-size: 1rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -57,8 +57,14 @@
   transition: background-color 0.2s, color 0.2s;
 }
 
+/* .settings-button, .logout-button {
+  display: flex;
+  align-items: center;
+  max-height: fit-content;
+} */
+
 .logout-button:hover {
-  background-color: var(--pastel-blue-500);
+  background-color: var(--primary-colour-500);
   color: var(--whitesmoke-50);
 }
 
