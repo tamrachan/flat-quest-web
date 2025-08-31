@@ -4,7 +4,7 @@ import "./NavBar.css"
 function NavBar() {
     return <nav className="navbar">
         <div className="navbar-title">
-            <h3>FlatQuest</h3>
+            FlatQuest
         </div>
         <div className="navbar-links">
             <Link to="/" className="nav-link">Home</Link>

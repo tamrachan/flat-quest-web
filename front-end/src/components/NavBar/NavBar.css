@@ -2,7 +2,7 @@
 
 .navbar {
   /* Use a dark, saturated blue for the background for good contrast */
-  background-color: var(--pastel-blue-700); 
+  background-color: var(--pastel-blue-700);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@
   font-weight: bold;
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  color: var(--pastel-blue-100); 
+  color: var(--pastel-blue-100);
   gap: 0.5rem;
 }
 
