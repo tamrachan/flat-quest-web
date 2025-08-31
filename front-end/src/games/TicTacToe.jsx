@@ -73,31 +73,35 @@ function Board() {
   console.log(winner)
 
   return (
-    <>
-      {/* <div className='position'> */}
-      <div className="status"> {status} </div>
-      <div className="board-row">
-        <Square value={squares[0]} squareClick={() => handleClick(0)} /> {/* this is an arrow function. once square is clicked, code after => will run */}
-        <Square value={squares[1]} squareClick={() => handleClick(1)} />
-        <Square value={squares[2]} squareClick={() => handleClick(2)} />
+    <div className="tictactoe-container"> 
+      <div className="game">
+        <div className="game-board">
+          <div className="board-row">
+            <Square value={squares[0]} squareClick={() => handleClick(0)} /> {/* this is an arrow function. once square is clicked, code after => will run */}
+            <Square value={squares[1]} squareClick={() => handleClick(1)} />
+            <Square value={squares[2]} squareClick={() => handleClick(2)} />
+          </div>
+
+          <div className="board-row">
+            <Square value={squares[3]} squareClick={() => handleClick(3)} />
+            <Square value={squares[4]} squareClick={() => handleClick(4)} />
+            <Square value={squares[5]} squareClick={() => handleClick(5)} />
+          </div>
+
+          <div className="board-row">
+            <Square value={squares[6]} squareClick={() => handleClick(6)} />
+            <Square value={squares[7]} squareClick={() => handleClick(7)} />
+            <Square value={squares[8]} squareClick={() => handleClick(8)} />
+          </div>
+        </div>
+        <div className="game-info">
+          <div className="status"> {status} </div>
+          <Popup winnerProp={winner} ></Popup>
+        </div>
       </div>
+      
 
-      <div className="board-row">
-        <Square value={squares[3]} squareClick={() => handleClick(3)} />
-        <Square value={squares[4]} squareClick={() => handleClick(4)} />
-        <Square value={squares[5]} squareClick={() => handleClick(5)} />
-      </div>
-
-      <div className="board-row">
-        <Square value={squares[6]} squareClick={() => handleClick(6)} />
-        <Square value={squares[7]} squareClick={() => handleClick(7)} />
-        <Square value={squares[8]} squareClick={() => handleClick(8)} />
-      </div>
-      {/* </div> */}
-
-      <Popup winnerProp={winner} ></Popup>
-
-    </>
+    </div>
   );
 }
 
