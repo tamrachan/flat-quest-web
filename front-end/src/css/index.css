@@ -1,14 +1,10 @@
 /* --- UNIVERSAL RESET & BACKGROUND FIX --- */
-html, body, #root, .App {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  width: 100%;
+html body, 
+html #root {
+  margin: 0;
+  padding: 0;
 }
 
-html, body {
-    height: 100%;
-}
 
 /*
   Import your color palette *after* the reset.
