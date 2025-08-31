@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FaTimes, FaUserEdit } from 'react-icons/fa';
+import { FaTimes, FaUserEdit, FaSun } from 'react-icons/fa';
 import './ThemeSidebar.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -145,7 +145,7 @@ const themes = {
 };
 
 
-function ThemeSidebar({ isOpen, onClose }) {
+function ThemeSidebar({ isOpen, onClose, onToggleTheme }) {
   const navigate = useNavigate();
 
   const applyTheme = (themeName) => {
@@ -191,6 +191,14 @@ function ThemeSidebar({ isOpen, onClose }) {
               />
             ))}
           </div>
+
+          <hr className="sidebar-divider" />
+          <button onClick={onToggleTheme} className="sidebar-action-button">
+             {/* You can dynamically change the icon based on the current mode if you pass it down */}
+            <FaSun /> 
+            <span>Toggle Light/Dark Mode</span>
+          </button>
+
         </div>
       </div>
     </>

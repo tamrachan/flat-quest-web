@@ -182,7 +182,7 @@ function PublicLayout() {
  * This is the main layout for the logged-in user experience.
  * It manages the dashboard navbar and the theme settings sidebar.
  */
-function DashboardLayout() {
+function DashboardLayout({ toggleTheme }) {
   // 2. State to manage the sidebar's visibility
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
@@ -192,7 +192,11 @@ function DashboardLayout() {
       <FlatPageNavBar onSettingsClick={() => setSidebarOpen(true)} />
       
       {/* 4. Render the sidebar and pass state to control it */}
-      <ThemeSidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <ThemeSidebar 
+        isOpen={isSidebarOpen} 
+        onClose={() => setSidebarOpen(false)} 
+        onToggleTheme={toggleTheme} // Pass the function to the sidebar
+        />
       
       <main className="main-content">
         <Outlet /> {/* Renders FlatPage, Games, etc. */}
@@ -205,6 +209,7 @@ function DashboardLayout() {
 function App() {
   const isLoggedIn = localStorage.getItem("keepLoggedIn");
   const { setUser } = useContext(UserContext);
+  const [themeMode, setThemeMode] = useState('light');
 
   useEffect(() => {
     const storedUser = localStorage.getItem("userData");
@@ -213,7 +218,26 @@ function App() {
     }
   }, [setUser]);
 
+   
+  // Function to toggle between light and dark
+  const toggleThemeMode = () => {
+    const newMode = themeMode === 'light' ? 'dark' : 'light';
+    setThemeMode(newMode);
+    localStorage.setItem('themeMode', newMode); // Save the choice
+  };
+
   useEffect(() => {
+    document.body.className = ''; // Clear existing classes
+    document.body.classList.add(themeMode);
+  }, [themeMode]);
+
+  // 3. useEffect to load the saved mode on startup
+  useEffect(() => {
+    const savedMode = localStorage.getItem('themeMode');
+    if (savedMode) {
+      setThemeMode(savedMode);
+    }
+
     const savedThemeName = localStorage.getItem('selectedTheme') || 'blue'; // Default to 'blue'
     const theme = themes[savedThemeName];
     if (theme) {
@@ -237,7 +261,7 @@ function App() {
         </Route>
 
         {/* --- Protected Dashboard Routes with Dashboard NavBar & Sidebar --- */}
-        <Route element={<DashboardLayout />}>
+        <Route element={<DashboardLayout toggleTheme={toggleThemeMode} />}>
           <Route path="/flatpage" element={<FlatPage />} />
           <Route path="/games" element={<Games />} />
           <Route path="/games/tictactoe" element={<TicTacToe />} />

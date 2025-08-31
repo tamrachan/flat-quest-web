@@ -125,7 +125,10 @@ function FlatPage() {
         }
     }
     
-    return <>
+    return (
+    <div className="flatpage-container">
+
+    
         <div className="title">
             <h1>{user?.user}'s FlatPage!</h1>
             <p>Group Code: {user?.code}</p>
@@ -195,29 +198,16 @@ function FlatPage() {
 
             </div>
 
-            <div className="flatmate-section"> 
-
+            <div className="flatmates-panel">
                 <h3>Flatmates</h3>
-
-                <div className="flatmates">
-
-                {flatmates
-                    .map(flatmate =>
-                        <Flatmate name={flatmate.name} imageSrc={redBeachBall} /> // TODO: have a place for image in database
-                )}
-
-                {/* <Flatmate name={"Hanaa"} imageSrc={redBeachBall} />
-                <Flatmate name={"Yi Xin"} imageSrc={redBeachBall} />
-                <Flatmate name={"Thy"} imageSrc={redBeachBall} />
-                <Flatmate name={"Freya"} imageSrc={redBeachBall} />
-                <Flatmate name={"Zoya"} imageSrc={redBeachBall} /> */}        
-
-
+                <div className="flatmate-icon-container">
+                    {flatmates.map(flatmate => (
+                        <Flatmate key={flatmate.user} name={flatmate.name} imageSrc={redBeachBall} />
+                    ))}
+                </div>
             </div>
 
             
-        </div>
-
         </div>
 
         
@@ -236,11 +226,11 @@ function FlatPage() {
                 setAssign("");
                 setRepeat("");
                 // setTaskConfig({ assigned: "", repeat: "none" });
-        }}
-    />
-)}
+                }}
+            />
+        )}
 
-    </>
+    </div>)
 }
 
 // function tasksBox() {

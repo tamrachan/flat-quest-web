@@ -1,7 +1,5 @@
 /*
   Import your color palette first so all other rules can use the variables.
-  Note: This assumes your colours.css file is in a sibling 'css' directory.
-  Adjust the path if needed, e.g., './styles/colours.css'
 */
 @import './colours.css';
 
@@ -11,33 +9,81 @@
   line-height: 1.6;
   font-weight: 400;
 
-  /* Set the default light theme using your color variables */
-  color: var(--primary-colour-900);
-  background-color: var(--whitesmoke-50);
-
   /* Standard web optimization properties */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* --- LIGHT THEME VARIABLES --- */
+  --text-colour: var(--primary-colour-900);
+  --heading-colour: var(--primary-colour-950);
+  --background-colour: var(--whitesmoke-50);
+  --component-background: var(--whitesmoke-50);
+  --border-colour: #D3D3D3; /* lightgray */
+  --link-colour: var(--primary-colour-700);
+  --link-hover-colour: var(--primary-colour-500);
+  --button-background: var(--primary-colour-500);
+  --button-text: var(--whitesmoke-50);
+  --button-hover-background: var(--primary-colour-600);
+  --popup-background: white;
+  --popup-text: black;
+  --popup-border: #ccc;
+  --input-background: var(--whitesmoke-100);
+  --input-text: var(--primary-colour-900);
+  --input-border: gray;
+
+  /* --- STATIC PANEL VARIABLES (Won't change in dark mode) --- */
+  --panel-background: var(--primary-colour-200); /* Or your original var(--primary-colour-light) */
+  --panel-text-colour: var(--primary-colour-900);
+  --panel-border-colour: var(--primary-colour-700);
 }
 
-/* Universal box-sizing and reset */
+/* --- DARK THEME VARIABLES (Applied when body has the 'dark' class) --- */
+body.dark {
+  --text-colour: var(--whitesmoke-100);
+  --heading-colour: var(--whitesmoke-50);
+  --background-colour: var(--primary-colour-950);
+  --component-background: var(--primary-colour-900);
+  --border-colour: var(--primary-colour-700);
+  --link-colour: var(--primary-colour-300);
+  --link-hover-colour: var(--primary-colour-200);
+  --button-background: var(--primary-colour-700);
+  --button-text: var(--whitesmoke-50);
+  --button-hover-background: var(--primary-colour-600);
+  --popup-background: var(--primary-colour-800);
+  --popup-text: var(--whitesmoke-50);
+  --popup-border: var(--primary-colour-600);
+  --input-background: var(--primary-colour-500);
+  --input-text: var(--whitesmoke-50);
+  --input-border: var(--primary-colour-700);
+}
+
+
+/* --- UNIVERSAL RESET & BACKGROUND FIX --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Ensure the body and root elements can grow to fill the viewport */
+/* This is the key fix. It targets every layer of the page wrapper. */
 html, body, #root {
   width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  height: 100%;
+  background-color: var(--background-colour);
 }
 
 body {
-  position: relative;
+  min-height: 100vh;
+  color: var(--text-colour);
+  font-family: 'Poppins', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -46,74 +92,44 @@ body {
 }
 
 /* --- Global Element Styling --- */
-
 a {
   font-weight: 500;
-  color: var(--primary-colour-700);
-  text-decoration: none; /* Removed underline by default for a cleaner look */
+  color: var(--link-colour);
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 a:hover {
-  color: var(--primary-colour-500);
-  text-decoration: underline; /* Add underline on hover for clarity */
+  color: var(--link-hover-colour);
+  text-decoration: underline;
 }
 
 h1 {
-  font-size: 2.8em; /* Slightly adjusted for better scaling */
+  margin: 0;
+  font-size: 2.8em;
   line-height: 1.2;
   font-weight: 700;
-  color: var(--primary-colour-950);
+  color: var(--heading-colour);
 }
 
-/* Base button styles - can be overridden by more specific component styles */
+/* Base button styles */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.8em 1.5em; /* Increased padding for a better feel */
+  padding: 0.8em 1.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--primary-colour-500);
-  color: var(--whitesmoke-50);
+  background-color: var(--button-background);
+  color: var(--button-text);
   cursor: pointer;
   transition: background-color 0.25s, transform 0.2s;
 }
 button:hover {
-  background-color: var(--primary-colour-600);
+  background-color: var(--button-hover-background);
   transform: translateY(-2px);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto var(--primary-colour-400);
   outline-offset: 2px;
-}
-
-/* 
-  Media query for dark mode - this will automatically apply if the user's
-  operating system is set to dark mode.
-*/
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: var(--primary-colour-100);
-    background-color: var(--primary-colour-950);
-  }
-
-  a {
-    color: var(--primary-colour-300);
-  }
-  a:hover {
-    color: var(--primary-colour-200);
-  }
-
-  h1 {
-    color: var(--whitesmoke-50);
-  }
-
-  button {
-    background-color: var(--primary-colour-700);
-    color: var(--whitesmoke-50);
-  }
-  button:hover {
-    background-color: var(--primary-colour-600);
-  }
 }

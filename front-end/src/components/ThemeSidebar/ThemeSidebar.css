@@ -121,3 +121,51 @@
   border-top: 1px solid var(--primary-colour-200);
   margin: 1.5rem 0;
 }
+
+/*
+  DARK MODE STYLES FOR THE SIDEBAR
+  These rules apply only when the body has the 'dark' class.
+*/
+
+body.dark .theme-sidebar {
+  background-color: var(--primary-colour-950);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .sidebar-header {
+  border-bottom: 1px solid var(--primary-colour-700);
+}
+
+body.dark .sidebar-header h3 {
+  color: var(--whitesmoke-100);
+}
+
+body.dark .close-btn {
+  color: var(--whitesmoke-200);
+}
+body.dark .close-btn:hover {
+  background-color: var(--primary-colour-800);
+}
+
+body.dark .sidebar-content p {
+  color: var(--whitesmoke-200);
+}
+
+body.dark .theme-swatch {
+  border: 3px solid var(--primary-colour-800);
+}
+
+body.dark .sidebar-action-button {
+  color: var(--whitesmoke-100);
+  background-color: var(--primary-colour-800);
+  border: 1px solid var(--primary-colour-700);
+}
+
+body.dark .sidebar-action-button:hover {
+  background-color: var(--primary-colour-700);
+  border-color: var(--primary-colour-600);
+}
+
+body.dark .sidebar-divider {
+  border-top: 1px solid var(--primary-colour-700);
+}

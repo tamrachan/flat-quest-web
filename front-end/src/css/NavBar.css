@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* A slightly stronger shadow */
+  margin: 0;
 }
 
 .navbar-brand {
@@ -15,6 +16,7 @@
   font-weight: bold;
   /* Use a very light blue for the brand text to make it pop */
   color: var(--whitesmoke-50); 
+  margin: 0;
 }
 
 .navbar-links {
