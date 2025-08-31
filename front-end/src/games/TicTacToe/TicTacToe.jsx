@@ -1,6 +1,6 @@
 import { use, useState } from 'react';
-import Popup from '../components/Popup';
-import "../css/TicTacToe.css"
+import Popup from './Popup';
+import "./TicTacToe.css"
 
 // TODO: now make it nice
 
@@ -75,6 +75,10 @@ function Board() {
   return (
     <div className="tictactoe-container"> 
       <div className="game">
+        <div className="game-info">
+          <div className="status"> {status} </div>
+          <Popup winnerProp={winner} ></Popup>
+        </div>
         <div className="game-board">
           <div className="board-row">
             <Square value={squares[0]} squareClick={() => handleClick(0)} /> {/* this is an arrow function. once square is clicked, code after => will run */}
@@ -93,10 +97,6 @@ function Board() {
             <Square value={squares[7]} squareClick={() => handleClick(7)} />
             <Square value={squares[8]} squareClick={() => handleClick(8)} />
           </div>
-        </div>
-        <div className="game-info">
-          <div className="status"> {status} </div>
-          <Popup winnerProp={winner} ></Popup>
         </div>
       </div>
       

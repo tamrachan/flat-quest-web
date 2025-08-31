@@ -1,4 +1,4 @@
-@import './colours.css';
+@import '../../css/colours.css';
 
 /* 
   Main container to center the game on the page.
@@ -7,9 +7,9 @@
 .tictactoe-container {
   display: flex;
   justify-content: center;
-  align-items: center; /* This will now center the vertical column */
+  align-items: flex-start; /* This will now center the vertical column */
   min-height: 100vh;
-  padding: 2rem;
+  padding: 10rem;
   background-color: var(--background-colour);
 }
 
@@ -37,7 +37,8 @@
 
 /* --- Game Board Styling --- */
 .game-board {
-  /* No changes needed */
+  display: inline-block;   /* shrink to fit grid */
+  overflow: hidden;    
 }
 
 .board-row:after {
@@ -48,15 +49,13 @@
 
 .square {
   background: var(--panel-background);
-  border: 2px solid var(--panel-border);
+  border: 2px solid var(--panel-border-colour);
   color: var(--primary-colour);
   float: left;
   font-size: 40px;
   font-weight: bold;
   line-height: 5rem;
   height: 5rem;
-  margin-right: -2px; /* Overlap borders for a clean grid */
-  margin-top: -2px;
   padding: 0;
   text-align: center;
   width: 5rem;

@@ -5,8 +5,8 @@ import React, { useEffect, useContext, useState } from "react";
 import { UserContext } from "./components/UserContext";
 
 // Import Components
-import NavBar from './components/NavBar';
-import FlatPageNavBar from './components/FlatPageNavBar';
+import NavBar from './components/NavBar/NavBar';
+import FlatPageNavBar from './components/NavBar/FlatPageNavBar';
 import ThemeSidebar from './components/ThemeSidebar/ThemeSidebar';
 
 // Import Pages
@@ -15,7 +15,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import FlatPage from './pages/FlatPage';
 import Games from './pages/Games';
-import TicTacToe from './games/TicTacToe';
+import TicTacToe from './games/TicTacToe/TicTacToe';
 import EditDetails from './pages/EditDetails';
 import ForgotPass from './pages/ForgotPass';
 

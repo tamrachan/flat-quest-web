@@ -1,0 +1,139 @@
+@import '../../css/colours.css';
+
+.navbar {
+  /* Use a dark, saturated blue for the background for good contrast */
+  background-color: var(--pastel-blue-700); 
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* A slightly stronger shadow */
+  margin: 0;
+}
+
+.navbar-title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--pastel-blue-100); 
+  gap: 0.5rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* Use a very light blue for the brand text to make it pop */
+  color: var(--whitesmoke-50); 
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem; /* Reduced gap slightly for a tighter look */
+}
+
+/* Style all links and the welcome paragraph together */
+.nav-link,
+.navbar p {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px; /* Slightly more rounded corners */
+  transition: background-color 0.2s, color 0.2s;
+  /* Use a light, readable text color */
+  color: var(--pastel-blue-100); 
+}
+
+/* Ensure the welcome message paragraph has no hover effect */
+.navbar p {
+  cursor: default;
+}
+
+.nav-link:hover {
+  /* Use a slightly lighter blue for the hover background */
+  background-color: var(--pastel-blue-700); 
+  /* Make the text brighter on hover */
+  color: var(--whitesmoke-50);
+}
+
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column; /* Stack items on mobile for better layout */
+    gap: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-links {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+  }
+}
+
+
+/* @import './colours.css';
+
+.navbar {
+  background-color: var(--pastel-blue-800);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link, p {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+p {
+  color: #f5f5f5;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+  }
+}
+
+.logout-button {
+  background-color: transparent;
+} */

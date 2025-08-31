@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import "../css/NavBar.css";
+import "./FlatPageNavBar.css";
 import { FaCog } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
 
 function FlatPageNavBar({ onSettingsClick }) {
     const navigate = useNavigate();
