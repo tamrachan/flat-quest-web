@@ -1,5 +1,5 @@
 import "../css/Games.css"
-import redBeachBall from '../icons/red_beach_ball.png';
+import redBeachBall from '../assets/icons/red_beach_ball.png';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 

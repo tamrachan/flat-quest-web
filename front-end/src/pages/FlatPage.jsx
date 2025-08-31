@@ -1,6 +1,6 @@
 import "../css/FlatPage.css"
 import ProgressBar from "../components/ProgressBar";
-import redBeachBall from '../icons/red_beach_ball.png';
+import redBeachBall from '../assets/icons/red_beach_ball.png';
 
 import { useEffect, useState, useRef } from "react";
 import { data, useNavigate } from "react-router-dom";
