@@ -1,0 +1,40 @@
+.icon-picker-container p {
+  color: var(--panel-text-colour);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 1rem;
+}
+
+.icon-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--input-background);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  aspect-ratio: 1 / 1; /* Ensures the button is always a perfect circle */
+}
+
+.icon-option:hover {
+  border-color: var(--primary-colour-300);
+}
+
+.icon-option.selected {
+  border-color: var(--primary-colour);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--primary-colour-light);
+}
+
+.icon-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

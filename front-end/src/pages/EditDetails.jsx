@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import api from "../components/AuthRoute";
+import IconPicker from "../components/IconPicker/IconPicker";
+import "../css/EditDetails.css";
 
 function EditDetails() {
     const [user, setUser] = useState(null);
@@ -10,6 +12,8 @@ function EditDetails() {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [code, setGroupCode] = useState('');
+    const [selectedIcon, setSelectedIcon] = useState('default');
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -50,7 +54,7 @@ function EditDetails() {
             });
 
         // Remove the old protected route call since /me replaces it
-    }, []);
+    }, [navigate]);
 
 
     const handleSubmit = (e) => {
@@ -118,15 +122,46 @@ function EditDetails() {
                 })
                 .catch(err => console.error(err));
         }
+
+        if (selectedIcon && selectedIcon !== (user.icon || 'default')) {
+            // Assume you have an endpoint like '/reset/update-icon'
+            api.patch('/reset/update-icon', { icon: selectedIcon })
+                .then(res => {
+                    // Update user state locally to reflect the change immediately
+                    setUser(prevUser => ({
+                        ...prevUser,
+                        icon: selectedIcon
+                    }));
+                    // IMPORTANT: Update localStorage so other parts of the app see the change
+                    const storedUser = JSON.parse(localStorage.getItem("userData"));
+                    if (storedUser) {
+                        storedUser.icon = selectedIcon;
+                        localStorage.setItem("userData", JSON.stringify(storedUser));
+                    }
+                    alert('Icon updated successfully!');
+                })
+                .catch(err => {
+                    console.error("Failed to update icon:", err);
+                    alert("There was an error updating your icon.");
+                });
+        }
     };
 
     if (!user) return <p>Loading...</p>;
 
     return (
-        <div className="register">
-            <div className="auth-form-container">
+        <div className="edit-details-page">
+            <div className="edit-details-form-container">
                 <h2>Edit my account details</h2>
-                <form className="register-form" onSubmit={handleSubmit}>
+                <form className="edit-details-form" onSubmit={handleSubmit}>
+
+                    <IconPicker 
+                        currentIcon={selectedIcon} 
+                        onIconSelect={(iconName) => setSelectedIcon(iconName)} 
+                    />
+
+                    <br />
+
                     <label htmlFor="name">Full name:</label>
                     <input 
                         value={name} 
@@ -181,6 +216,7 @@ function EditDetails() {
                         name="groupCode" 
                         maxLength={6} 
                     />
+
                     <br />
                     
                     <button type="submit">Update details</button>
