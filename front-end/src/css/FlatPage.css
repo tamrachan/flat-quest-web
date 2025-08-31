@@ -82,7 +82,7 @@
   grid-row: 4 / 5;
 }
 
-.addTask form {
+.addTask form, .addMainTask form {
   display: flex;
   width: 100%;
   gap: 0.5rem;
