@@ -79,13 +79,13 @@
 .game-card-players {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-colour);
+  color: var(--panel-text-colour);
   margin-bottom: 1rem;
   opacity: 0.8;
 }
 
 .game-card-desc {
   font-size: 1rem;
-  color: var(--text-colour);
+  color: var(--panel-text-colour);
   flex-grow: 1; /* Pushes description down to align content */
 }
