@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import "../css/Login.css"
 import { useNavigate } from "react-router-dom";
-// import { UserContext } from "../components/UserContext";
+import toast from "react-hot-toast";
 import { jwtDecode } from "jwt-decode";
 
 function Login() {
@@ -40,6 +40,7 @@ function Login() {
                 // Navigate to a protected page
                 console.log("/flatpage");
                 navigate("/flatpage");
+                toast.success("You are logged in.");
             } catch (err) {
                 alert("Invalid login");
                 console.error(err);

@@ -1,12 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./FlatPageNavBar.css";
 import { FaCog } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 function FlatPageNavBar({ onSettingsClick }) {
     const navigate = useNavigate();
     const logout = () => {
         localStorage.clear();
         navigate('/');
+        toast.success("You have been logged out.");
     }
 
     return <nav className="navbar">
