@@ -470,7 +470,7 @@ function DisplayTaskLog({ user }) {
             results.push(
                 <div>
                     {/* {task.date_completed} */}
-                    {task.date_completed?.substring(0,10).split('-').reverse().join('-')} {task.date_completed?.substring(11,19)}: {task.assigned || task.user} completed {task.task}
+                    {task.date_completed?.substring(0,10).split('-').reverse().join('/')} {task.date_completed?.substring(11,19)}: {task.assigned || task.user} completed {task.task}
                     
                 </div>
             )
