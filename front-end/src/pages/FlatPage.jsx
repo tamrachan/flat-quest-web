@@ -124,6 +124,8 @@ function FlatPage() {
                 })
         }
     }
+
+    
     
     return (
     <div className="flatpage-container">
@@ -564,12 +566,13 @@ function Dropdown() {
 //     );
 // }
 
-
+const getIconUrl = (name) =>
+        new URL(`../assets/icons/${name}.png`, import.meta.url).href;
 
 function Flatmate({ name, imageSrc }) {
     return <div className="flatmate-icon">
         
-        <img src={`../assets/icons/${imageSrc}.png`} alt="Avatar"></img>
+        <img src={getIconUrl(imageSrc)} alt="Avatar"></img>
         <figcaption> {name} </figcaption>
         {/* <label>name</label> */}
 

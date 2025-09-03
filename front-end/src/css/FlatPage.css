@@ -191,6 +191,7 @@ h1, h2, h3, p {
 
 .flatmate-icon {
   padding: 1rem;
+  justify-items: center;
 }
 
 img {
