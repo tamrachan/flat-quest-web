@@ -44,7 +44,7 @@ function Register() {
                 pass,
                 role,
                 groupCode: generatedGroupCode,
-                defaultIcon: "../assets/icons/anonymous.png"
+                defaultIcon: "anonymous" // "../assets/icons/anonymous.png"
             })
             .then(result => {
                 console.log(result)
