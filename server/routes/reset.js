@@ -210,6 +210,23 @@ router.patch("/update-code", auth, async (req, res) => {
   }
 });
 
+// update icon
+router.patch("/update-icon", auth, async (req, res) => {
+  try {    
+    const iconName = req.body.icon; // values('icon')
+    // const iconPath = `/assets/icons/${iconName}.png`;
+    const result = await db.collection("users").updateOne(
+      { _id: new ObjectId(req.userId) },
+      { $set: { icon: iconName } } //iconPath
+    );
+    
+    res.status(200).json({ message: "Icon updated successfully" });
+  } catch (err) {
+    console.error("Update icon error:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 // // Update password (authenticated - requires current password)
 // router.patch("/change-password", auth, async (req, res) => {
 //   try {

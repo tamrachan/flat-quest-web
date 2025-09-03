@@ -147,7 +147,8 @@ router.post("/register", async (req, res) => {
             email: req.body.email,
             pass: hashedPassword,
             role: req.body.role,
-            code: req.body.groupCode
+            code: req.body.groupCode,
+            icon: req.body.defaultIcon
         };
 
         let collection = await db.collection("users");
@@ -171,7 +172,8 @@ function generateToken(user) {
       username: user.user,
       email: user.email,
       role: user.role,
-      code: user.code
+      code: user.code,
+      icon: user.icon 
     },
     JWT_SECRET,
     { expiresIn: "1h" }

@@ -45,6 +45,7 @@ function EditDetails() {
                 setUsername(userData.username || userData.user || '');
                 setEmail(userData.email || '');
                 setGroupCode(userData.code || '');
+                setSelectedIcon(userData.icon || 'default');
             })
             .catch(err => {
                 console.error("Failed to fetch user data:", err);
@@ -123,8 +124,10 @@ function EditDetails() {
                 .catch(err => console.error(err));
         }
 
+        // print("kkk");
         if (selectedIcon && selectedIcon !== (user.icon || 'default')) {
-            // Assume you have an endpoint like '/reset/update-icon'
+            // const iconPath = `/assets/icons/${selectedIcon}.png`;
+            // print("hefhf");
             api.patch('/reset/update-icon', { icon: selectedIcon })
                 .then(res => {
                     // Update user state locally to reflect the change immediately
@@ -138,10 +141,14 @@ function EditDetails() {
                         storedUser.icon = selectedIcon;
                         localStorage.setItem("userData", JSON.stringify(storedUser));
                     }
+                    // print("hefhf")
+                    // print("Updated icon to: %s", selectedIcon);
                     alert('Icon updated successfully!');
+                    // print("k");
                 })
                 .catch(err => {
                     console.error("Failed to update icon:", err);
+                    // print("Updated icon to: %s", selectedIcon);
                     alert("There was an error updating your icon.");
                 });
         }

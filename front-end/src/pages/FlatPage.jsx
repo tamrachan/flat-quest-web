@@ -202,7 +202,7 @@ function FlatPage() {
                 <h3>Flatmates</h3>
                 <div className="flatmate-icon-container">
                     {flatmates.map(flatmate => (
-                        <Flatmate key={flatmate.user} name={flatmate.name} imageSrc={redBeachBall} />
+                        <Flatmate key={flatmate.user} name={flatmate.name} imageSrc={flatmate.icon} /> 
                     ))}
                 </div>
             </div>
@@ -569,7 +569,7 @@ function Dropdown() {
 function Flatmate({ name, imageSrc }) {
     return <div className="flatmate-icon">
         
-        <img src={imageSrc} alt="Avatar"></img>
+        <img src={`../assets/icons/${imageSrc}.png`} alt="Avatar"></img>
         <figcaption> {name} </figcaption>
         {/* <label>name</label> */}
 
