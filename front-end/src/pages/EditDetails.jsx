@@ -4,6 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import api from "../components/AuthRoute";
 import IconPicker from "../components/IconPicker/IconPicker";
 import "../css/EditDetails.css";
+import toast from "react-hot-toast";
 
 function EditDetails() {
     const [user, setUser] = useState(null);
@@ -19,7 +20,7 @@ function EditDetails() {
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) {
-            alert("You are not logged in");
+            toast.error("You are not logged in");
             navigate("/login");
             return;
         }
@@ -28,7 +29,7 @@ function EditDetails() {
             // Verify token is valid
             jwtDecode(token);
         } catch {
-            alert("Invalid token");
+            toast.error("Invalid token");
             localStorage.removeItem("token");
             navigate("/login");
             return;
@@ -49,7 +50,7 @@ function EditDetails() {
             })
             .catch(err => {
                 console.error("Failed to fetch user data:", err);
-                alert("Session expired. Please login again.");
+                toast.error("Session expired. Please login again.");
                 localStorage.removeItem("token");
                 navigate("/login");
             });
@@ -70,7 +71,7 @@ function EditDetails() {
                         ...prevUser,
                         name: name
                     }));
-                    alert('Name updated successfully!');
+                    toast.success('Name updated successfully!');
                 })
                 .catch(err => console.error(err));
         }
@@ -83,7 +84,7 @@ function EditDetails() {
                         username: username,
                         user: username // Handle both field names
                     }));
-                    alert('Username updated successfully!');
+                    toast.success('Username updated successfully!');
                 })
                 .catch(err => console.error(err));
         }
@@ -95,7 +96,7 @@ function EditDetails() {
                         ...prevUser,
                         email: email
                     }));
-                    alert('Email updated successfully!');
+                    toast.success('Email updated successfully!');
                 })
                 .catch(err => console.error(err));
         }
@@ -106,7 +107,7 @@ function EditDetails() {
                 newPassword: pass 
             })
                 .then(res => {
-                    alert('Password updated successfully!');
+                    toast.success('Password updated successfully!');
                     setPass(''); // Clear password field after success
                 })
                 .catch(err => console.error(err));
@@ -119,15 +120,12 @@ function EditDetails() {
                         ...prevUser,
                         code: code
                     }));
-                    alert('Group code updated successfully!');
+                    toast.success('Group code updated successfully!');
                 })
                 .catch(err => console.error(err));
         }
 
-        // print("kkk");
         if (selectedIcon && selectedIcon !== (user.icon || 'default')) {
-            // const iconPath = `/assets/icons/${selectedIcon}.png`;
-            // print("hefhf");
             api.patch('/reset/update-icon', { icon: selectedIcon })
                 .then(res => {
                     // Update user state locally to reflect the change immediately
@@ -141,15 +139,13 @@ function EditDetails() {
                         storedUser.icon = selectedIcon;
                         localStorage.setItem("userData", JSON.stringify(storedUser));
                     }
-                    // print("hefhf")
                     // print("Updated icon to: %s", selectedIcon);
-                    alert('Icon updated successfully!');
-                    // print("k");
+                    toast.success('Icon updated successfully!');
                 })
                 .catch(err => {
                     console.error("Failed to update icon:", err);
                     // print("Updated icon to: %s", selectedIcon);
-                    alert("There was an error updating your icon.");
+                    toast.error("There was an error updating your icon.");
                 });
         }
     };

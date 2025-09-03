@@ -3,6 +3,7 @@ import './css/App.css';
 import AuthRoute from './components/AuthRoute';
 import React, { useEffect, useContext, useState } from "react";
 import { UserContext } from "./components/UserContext";
+import { Toaster } from 'react-hot-toast';
 
 // Import Components
 import NavBar from './components/NavBar/NavBar';
@@ -251,6 +252,10 @@ function App() {
 
   return (
     <div className="App">
+      <Toaster
+        position="bottom-left"
+        reverseOrder={false}
+      />
       <Routes>
         {/* --- Public Routes with Standard NavBar --- */}
         <Route element={<PublicLayout />}>
