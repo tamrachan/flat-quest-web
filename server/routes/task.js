@@ -76,12 +76,13 @@ router.post("/complete-task", async (req, res) => {
     try {
         let id = req.body._id;
         let collectionName = req.body.collectionName;
+        let date_completed = req.body.date_completed;
 
         if (!collectionName || !id) {
             return res.status(400).json({ message: "Missing collectionName or _id" });
         }
 
-        let result = await db.collection(collectionName).updateOne( { _id: ObjectId.createFromHexString(id)}, {$set: {complete: Boolean(true)}} );
+        let result = await db.collection(collectionName).updateOne( { _id: ObjectId.createFromHexString(id)}, {$set: {complete: Boolean(true), date_completed: date_completed} } );
         
         console.log(ObjectId.createFromHexString(id), collectionName, "test", result)
         

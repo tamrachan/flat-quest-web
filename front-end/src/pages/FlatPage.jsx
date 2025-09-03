@@ -1,6 +1,5 @@
 import "../css/FlatPage.css"
 import ProgressBar from "../components/ProgressBar";
-import redBeachBall from '../assets/icons/red_beach_ball.png';
 
 import { useEffect, useState, useRef } from "react";
 import { data, useNavigate } from "react-router-dom";
@@ -329,7 +328,7 @@ function DisplayMainTasks({ user }) {
 
     const accept = (taskId) => {
         axios.post("http://localhost:5050/task/complete-task", {
-            collectionName: "tasks", _id: taskId })
+            collectionName: "tasks", _id: taskId, date_completed: new Date() })
             .then(navigate(0))
             .catch(error => {
                 console.error("Error: ", error);
@@ -403,7 +402,7 @@ function DisplayPersonalTasks({ user }) {
 
     const accept = (taskId) => {
         axios.post("http://localhost:5050/task/complete-task", {
-            collectionName: "personal", _id: taskId })
+            collectionName: "personal", _id: taskId, date_completed: new Date() })
             .then(navigate(0))
             .catch(error => {
                 console.error("Error: ", error);
@@ -470,9 +469,9 @@ function DisplayTaskLog({ user }) {
             //checked={task.complete}
             results.push(
                 <div>
-
-                    {task.task}
-
+                    {/* {task.date_completed} */}
+                    {task.date_completed?.substring(0,10).split('-').reverse().join('-')} {task.date_completed?.substring(11,19)}: {task.assigned || task.user} completed {task.task}
+                    
                 </div>
             )
         }
