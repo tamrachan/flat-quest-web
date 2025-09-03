@@ -1,1 +1,0 @@
-// TODO: Create a page to pick icons 
